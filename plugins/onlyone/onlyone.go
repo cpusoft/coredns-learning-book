@@ -6,6 +6,7 @@ import (
 	"github.com/coredns/coredns/plugin"
 	"github.com/coredns/coredns/plugin/pkg/nonwriter"
 	"github.com/coredns/coredns/request"
+	"github.com/cpusoft/goutil/belogs"
 
 	"github.com/miekg/dns"
 )
@@ -26,7 +27,7 @@ func (o *onlyone) ServeDNS(ctx context.Context, w dns.ResponseWriter,
 	r *dns.Msg) (int, error) {
 	// The request struct is a convenience struct.
 	state := request.Request{W: w, Req: r}
-	log.Info("parse(): state.Name():", state.Name(),
+	belogs.Info("parse(): state.Name():", state.Name(),
 		"  state.QName():", state.QName(),
 		"  state.QType():", state.QType(),
 		"  state.Type():", state.Type(),
@@ -46,7 +47,7 @@ func (o *onlyone) ServeDNS(ctx context.Context, w dns.ResponseWriter,
 		// Simply return if there was an error.
 		return rcode, err
 	}
-	log.Info("parse(): rcode:", rcode)
+	belogs.Info("parse(): rcode:", rcode)
 
 	// Now we know that a successful response was received from a plugin
 	// that appears later in the chain. Next is to examine that response
@@ -61,7 +62,7 @@ func (o *onlyone) trimRecords(m *dns.Msg) *dns.Msg {
 	if len(m.Answer) <= 1 {
 		return m
 	}
-	log.Info("parse(): m.Answer:", m.Answer)
+	belogs.Info("parse(): m.Answer:", m.Answer)
 	// Allocate an array to hold answers to keep.
 	keep := make([]bool, len(m.Answer))
 
@@ -95,7 +96,7 @@ func (o *onlyone) trimRecords(m *dns.Msg) *dns.Msg {
 			newAnswer = append(newAnswer, a)
 		}
 	}
-	log.Info("parse(): newAnswer:", newAnswer)
+	belogs.Info("parse(): newAnswer:", newAnswer)
 	m.Answer = newAnswer
 	return m
 }

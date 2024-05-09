@@ -7,6 +7,7 @@ toolchain go1.22.3
 require (
 	github.com/coredns/caddy v1.1.1
 	github.com/coredns/coredns v1.11.3
+	github.com/cpusoft/goutil v1.0.33-0.20240507013357-765c4b283c52
 	github.com/miekg/dns v1.1.59
 )
 
@@ -29,7 +30,7 @@ require (
 	github.com/prometheus/common v0.53.0 // indirect
 	github.com/prometheus/procfs v0.14.0 // indirect
 	github.com/quic-go/quic-go v0.43.1 // indirect
-	github.com/stretchr/testify v1.9.0 // indirect
+	github.com/shiena/ansicolor v0.0.0-20230509054315-a9deabde6e02 // indirect
 	go.uber.org/mock v0.4.0 // indirect
 	golang.org/x/crypto v0.23.0 // indirect
 	golang.org/x/exp v0.0.0-20240506185415-9bf2ced13842 // indirect
