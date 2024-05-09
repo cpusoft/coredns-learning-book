@@ -10,6 +10,8 @@ import (
 	"github.com/coredns/coredns/core/dnsserver"
 	"github.com/coredns/coredns/plugin"
 	clog "github.com/coredns/coredns/plugin/pkg/log"
+	_ "github.com/cpusoft/goutil/conf"
+	_ "github.com/cpusoft/goutil/logs"
 	"github.com/miekg/dns"
 )
 
