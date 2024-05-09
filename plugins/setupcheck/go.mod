@@ -1,4 +1,4 @@
-module github.com/coredns/learning-coredns/plugins/setupcheck
+module github.com/cpusoft/coredns-learning-book/plugins/setupcheck
 
 go 1.18
 

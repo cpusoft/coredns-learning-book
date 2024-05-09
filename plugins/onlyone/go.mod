@@ -1,4 +1,4 @@
-module github.com/coredns/learning-coredns/plugins/onlyone
+module github.com/cpusoft/coredns-learning-book/plugins/onlyone
 
 go 1.18
 
